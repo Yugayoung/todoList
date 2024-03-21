@@ -64,10 +64,7 @@ const TodoUl = styled.ul`
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
-  const handleAdd = (todo) => {
-    console.log(todo);
-    setTodos([...todos, todo]);
-  };
+  const handleAdd = (todo) => setTodos([...todos, todo]);
   return (
     <>
       <TodoList>
@@ -82,9 +79,9 @@ export default function Todo() {
         {/* TodoList */}
         <TodoUl>
           {todos.map((item) => (
-            <TodoLi key={item.id}>
+            <TodoLi>
               <input type='checkbox' />
-              <Label htmlFor=''>{item.text}</Label>
+              <Label htmlFor=''>안녕</Label>
               <Btn>
                 <FaRegTrashAlt />
               </Btn>

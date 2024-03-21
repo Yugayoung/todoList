@@ -62,12 +62,10 @@ const TodoUl = styled.ul`
   overflow-y: auto;
 `;
 
+
 export default function Todo() {
-  const [todos, setTodos] = useState([]);
-  const handleAdd = (todo) => {
-    console.log(todo);
-    setTodos([...todos, todo]);
-  };
+    const [todos, setTodos] = useState([]);
+    const handleAdd = 
   return (
     <>
       <TodoList>
@@ -81,19 +79,17 @@ export default function Todo() {
 
         {/* TodoList */}
         <TodoUl>
-          {todos.map((item) => (
-            <TodoLi key={item.id}>
-              <input type='checkbox' />
-              <Label htmlFor=''>{item.text}</Label>
-              <Btn>
-                <FaRegTrashAlt />
-              </Btn>
-            </TodoLi>
-          ))}
+          <TodoLi>
+            <input type='checkbox' />
+            <Label htmlFor=''>안녕</Label>
+            <Btn>
+              <FaRegTrashAlt />
+            </Btn>
+          </TodoLi>
         </TodoUl>
 
         {/* 할일 입력 */}
-        <AddTodo onAdd={handleAdd} />
+        <AddTodo onAdd={todos} />
       </TodoList>
     </>
   );

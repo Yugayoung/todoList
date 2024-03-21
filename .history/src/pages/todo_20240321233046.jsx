@@ -66,7 +66,6 @@ export default function Todo() {
   const [todos, setTodos] = useState([]);
   const handleAdd = (todo) => {
     console.log(todo);
-    setTodos([...todos, todo]);
   };
   return (
     <>
@@ -81,15 +80,13 @@ export default function Todo() {
 
         {/* TodoList */}
         <TodoUl>
-          {todos.map((item) => (
-            <TodoLi key={item.id}>
-              <input type='checkbox' />
-              <Label htmlFor=''>{item.text}</Label>
-              <Btn>
-                <FaRegTrashAlt />
-              </Btn>
-            </TodoLi>
-          ))}
+          <TodoLi>
+            <input type='checkbox' />
+            <Label htmlFor=''>안녕</Label>
+            <Btn>
+              <FaRegTrashAlt />
+            </Btn>
+          </TodoLi>
         </TodoUl>
 
         {/* 할일 입력 */}
