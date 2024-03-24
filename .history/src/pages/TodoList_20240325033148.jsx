@@ -47,13 +47,9 @@ export default function TodoList() {
     console.log(todo);
     setTodos([...todos, todo]);
   };
-  const handleDelete = (deleted) => {
+  const handleDelete = (deleted) =>
     setTodos(todos.filter((t) => t.id !== deleted.id));
-    console.log('delete');
-  };
-
-  const handleUpdate = (updated) =>
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  console.log('delete');
   return (
     <>
       <TodoListCss>

@@ -13,10 +13,6 @@ const TodoLi = styled.li`
 const Label = styled.label`
   flex: 1 1;
   margin: 0rem 0.5rem;
-  /* 비우지 않고 none 으로 하는게 더 좋은가? */
-  text-decoration: ${(props) => (props.completed ? 'line-through' : '')};
-  text-decoration-color: red;
-  text-decoration-thickness: 3px;
 `;
 
 const Btn = styled.button`
@@ -33,7 +29,7 @@ export default function Todo({ todo, onDelete, onUpdate }) {
   const { text, status } = todo;
   const handleChange = (e) => {
     const status = e.target.checked ? 'completed' : 'active';
-    onUpdate({ ...todo, status: status });
+    onUpdate({ ...todo, status });
   };
   const handleDelete = () => onDelete(todo);
   return (
@@ -44,9 +40,7 @@ export default function Todo({ todo, onDelete, onUpdate }) {
         checked={status === 'completed'}
         onChange={handleChange}
       />
-      <Label htmlFor='checkbox' completed={status === 'completed'}>
-        {text}
-      </Label>
+      <Label htmlFor='checkbox'>{text}</Label>
       <Btn onClick={handleDelete}>
         <FaRegTrashAlt />
       </Btn>
