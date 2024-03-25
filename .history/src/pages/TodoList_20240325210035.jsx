@@ -41,13 +41,8 @@ const TodoUl = styled.ul`
   overflow-y: auto;
 `;
 
-function readTodos() {
-  const todos = localStorage.getItem('todos');
-  return todos ? JSON.parse(todos) : [];
-}
-
 export default function TodoList() {
-  const [todos, setTodos] = useState(() => readTodos());
+  const [todos, setTodos] = useState([]);
   const handleAdd = (todo) => {
     console.log(todo);
     setTodos([...todos, todo]);

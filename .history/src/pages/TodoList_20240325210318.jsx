@@ -47,7 +47,7 @@ function readTodos() {
 }
 
 export default function TodoList() {
-  const [todos, setTodos] = useState(() => readTodos());
+  const [todos, setTodos] = useState(readTodos());
   const handleAdd = (todo) => {
     console.log(todo);
     setTodos([...todos, todo]);
