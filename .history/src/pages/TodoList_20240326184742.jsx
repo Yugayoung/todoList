@@ -17,7 +17,7 @@ function readTodos() {
   return todos ? JSON.parse(todos) : [];
 }
 
-export default function TodoList({ filter }) {
+export default function TodoList(filter) {
   const [todos, setTodos] = useState(() => readTodos());
   const handleAdd = (todo) => {
     console.log(todo);

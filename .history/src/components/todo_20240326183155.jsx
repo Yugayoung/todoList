@@ -15,7 +15,7 @@ const Label = styled.label`
   margin: 0rem 0.5rem;
   /* 비우지 않고 none 으로 하는게 더 좋은가? */
   text-decoration: ${(props) =>
-    props.$status === 'done' ? 'line-through' : ''};
+    props.status === 'done' ? 'line-through' : ''};
   text-decoration-color: red;
   text-decoration-thickness: 3px;
 `;
@@ -45,7 +45,7 @@ export default function Todo({ todo, onDelete, onUpdate }) {
         checked={status === 'done'}
         onChange={handleChange}
       />
-      <Label htmlFor={id} $status={status}>
+      <Label htmlFor={id} done={status === 'done'}>
         {text}
       </Label>
       <Btn onClick={handleDelete}>
