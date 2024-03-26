@@ -17,7 +17,7 @@ function readTodos() {
   return todos ? JSON.parse(todos) : [];
 }
 
-export default function TodoList({ filter }) {
+export default function TodoList(filter) {
   const [todos, setTodos] = useState(() => readTodos());
   const handleAdd = (todo) => {
     console.log(todo);
@@ -38,7 +38,7 @@ export default function TodoList({ filter }) {
     <section>
       {/* TodoList */}
       <TodoUl>
-        {filtered.map((item) => (
+        {todos.map((item) => (
           <Todo
             key={item.id}
             todo={item}
@@ -52,12 +52,4 @@ export default function TodoList({ filter }) {
       <AddTodo onAdd={handleAdd} />
     </section>
   );
-}
-
-function getFilteredItems(todos, filter) {
-  if (filter === 'all') {
-    return todos;
-  }
-
-  return todos.filter((todo) => todo.status === filter);
 }

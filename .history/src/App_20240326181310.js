@@ -2,7 +2,6 @@ import './App.css';
 import TodoList from './pages/TodoList';
 import Header from './components/Header';
 import { styled } from 'styled-components';
-import { useState } from 'react';
 
 const TodoListSection = styled.section`
   background-color: #def6cc;
@@ -14,11 +13,10 @@ const TodoListSection = styled.section`
 const filters = ['all', 'active', 'done'];
 
 function App() {
-  const [filter, setFilter] = useState(filters[0]);
   return (
     <TodoListSection>
-      <Header filters={filters} filter={filter} onChange={setFilter} />
-      <TodoList filter={filter} />
+      <Header />
+      <TodoList />
     </TodoListSection>
   );
 }

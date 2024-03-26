@@ -18,7 +18,7 @@ function App() {
   return (
     <TodoListSection>
       <Header filters={filters} filter={filter} onChange={setFilter} />
-      <TodoList filter={filter} />
+      <TodoList />
     </TodoListSection>
   );
 }

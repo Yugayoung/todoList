@@ -11,7 +11,7 @@ const TodoListSection = styled.section`
   padding: 0rem 2rem;
 `;
 
-const filters = ['all', 'active', 'done'];
+const filters = ['all', 'active', 'completed'];
 
 function App() {
   const [filter, setFilter] = useState(filters[0]);
