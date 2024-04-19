@@ -15,7 +15,7 @@ const Label = styled.label`
   margin: 0rem 0.5rem;
   /* 비우지 않고 none 으로 하는게 더 좋은가? */
   text-decoration: ${(props) =>
-    props.$status === 'done' ? 'line-through' : 'none'};
+    props.$status === 'done' ? 'line-through' : ''};
   text-decoration-color: red;
   text-decoration-thickness: 3px;
 `;
